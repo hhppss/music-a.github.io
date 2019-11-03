@@ -119,3 +119,23 @@ a {
     .header-btn img {
       margin-left: 10px;
       width: 15%; }
+
+.information-title {
+  margin: 30px 0px -1px 0px;
+  font-size: 29px;
+  font-family: "Playfair Display Bold";
+  text-transform: uppercase;
+  letter-spacing: 1.2px; }
+
+.information-text {
+  margin-top: 30px;
+  text-align: justify;
+  font-size: 20px;
+  font-family: "Playfair Display Bold";
+  color: #010101;
+  line-height: 1.5;
+  letter-spacing: 1.2px; }
+
+.information .line {
+  width: 200px;
+  height: 3px; }
