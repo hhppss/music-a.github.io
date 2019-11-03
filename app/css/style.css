@@ -121,16 +121,17 @@ a {
       width: 15%; }
 
 .information-title {
-  margin: 30px 0px -1px 0px;
+  margin: 50px 0px 0px 0px;
   font-size: 29px;
   font-family: "Playfair Display Bold";
   text-transform: uppercase;
   letter-spacing: 1.2px; }
 
 .information-text {
-  margin-top: 30px;
+  margin-top: 50px;
   text-align: justify;
   font-size: 20px;
+  margin-bottom: 50px;
   font-family: "Playfair Display Bold";
   color: #010101;
   line-height: 1.5;
@@ -139,3 +140,51 @@ a {
 .information .line {
   width: 200px;
   height: 3px; }
+
+.advantaged {
+  background-color: #000000;
+  min-height: 800px;
+  width: 100%;
+  color: #ffffff; }
+  .advantaged-title {
+    font-size: 32px;
+    font-family: "Playfair Display Bold";
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 2.47;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: -0px; }
+    .advantaged-title span {
+      font-size: 35px;
+      font-family: 'Times New Roman';
+      font-weight: 600; }
+  .advantaged-item {
+    margin-top: 40px;
+    margin-bottom: 80px; }
+    .advantaged-item .line {
+      position: absolute;
+      height: 3px;
+      width: 50px;
+      left: -10%;
+      bottom: 94%; }
+    .advantaged-item img {
+      display: inline;
+      width: 555px; }
+    .advantaged-item__text {
+      margin-top: 80px; }
+      .advantaged-item__text p {
+        font-size: 15px;
+        font-family: "Playfair Display Regular";
+        color: #ffffff;
+        line-height: 1.4;
+        text-align: justify; }
+      .advantaged-item__text h2 {
+        font-family: "Playfair Display Bold";
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px; }
+  .advantaged-2 {
+    display: flex; }
+  .advantaged .line-custom {
+    left: 26%; }

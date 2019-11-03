@@ -108,15 +108,16 @@ a
 			width: 15%
 .information
 	&-title
-		margin: 30px 0px -1px 0px
+		margin: 50px 0px 0px 0px
   font-size: 29px
   +PlayDB
   text-transform: uppercase
 		letter-spacing: 1.2px
 	&-text
-		margin-top: 30px
+		margin-top: 50px
 		text-align: justify
   font-size: 20px
+		margin-bottom: 50px
   +PlayDB
 		color: $color-text
   line-height: 1.5
@@ -125,8 +126,57 @@ a
 			width: 200px
 			height: 3px
 
+.advantaged 
+	background-color: $color-black
+	min-height: 800px
+	width: 100%
+	color: $color-white
+	&-title
+  font-size: 32px
+  +PlayDB
+  color: $color-white
+  text-transform: uppercase
+  line-height: 2.47
+		text-align: center
+		margin-top: 50px
+		margin-bottom: -0px
+		span 
+			font-size: 35px
+			font-family: 'Times New Roman'
+			font-weight: 600
+	&-item
+		margin-top: 40px
+		margin-bottom: 80px
+		.line
+			position: absolute
+			height: 3px
+			width: 50px
+			left: -10%
+			bottom: 94%
+		img
+			display: inline
+			width: 555px
+		&__text
+			margin-top: 80px
+			p
+				font-size: 15px;
+				+PlayDR
+				color: $color-white
+				line-height: 1.4
+				text-align: justify
+			h2
+				+PlayDB
+				text-transform: uppercase
+  		letter-spacing: 2px
+				margin-bottom: 30px
 
+	&-2
+		display: flex
+		//flex-direction: row-reverse
+	.line-custom
+		left: 26%
 
+	
 
 
 
