@@ -172,19 +172,22 @@ a {
     .advantaged-item img {
       display: inline;
       width: 555px; }
-    .advantaged-item__text {
+    .advantaged-item__textright, .advantaged-item__textleft {
       margin-top: 80px; }
-      .advantaged-item__text p {
+      .advantaged-item__textright p, .advantaged-item__textleft p {
         font-size: 15px;
         font-family: "Playfair Display Regular";
         color: #ffffff;
-        line-height: 1.4;
-        text-align: justify; }
-      .advantaged-item__text h2 {
+        line-height: 1.4; }
+      .advantaged-item__textright h2, .advantaged-item__textleft h2 {
         font-family: "Playfair Display Bold";
         text-transform: uppercase;
         letter-spacing: 2px;
         margin-bottom: 30px; }
+    .advantaged-item__textright {
+      text-align: left; }
+    .advantaged-item__textleft {
+      text-align: right; }
 
 .jhl {
   height: 420px;
@@ -228,3 +231,47 @@ a {
     font-family: "Playfair Display Bold";
     font-size: 18px;
     margin-top: 20px; }
+
+.jhlpay {
+  height: 500px; }
+  .jhlpay-title h2 {
+    font-size: 32px;
+    font-family: "Playfair Display Bold";
+    color: #010101;
+    text-transform: uppercase;
+    line-height: 2.47;
+    margin: 30px 0 30px 0; }
+  .jhlpay-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px; }
+    .jhlpay-flex img {
+      margin-bottom: 20px; }
+    .jhlpay-flex h2 {
+      font-size: 32px;
+      font-family: "Playfair Display Bold";
+      color: #010101;
+      text-transform: uppercase; }
+    .jhlpay-flex p {
+      font-family: "Playfair Display Regular";
+      color: #010101;
+      line-height: 1.5;
+      letter-spacing: 1.2px; }
+    .jhlpay-flex__button {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-bottom: 50px; }
+    .jhlpay-flex button {
+      width: 230px;
+      height: 50px;
+      border: 2px solid #a5a5a3; }
+
+@media only screen and (max-width: 640px) {
+  .jhlpay-flex__button {
+    flex-direction: column;
+    padding-left: 120px; }
+    .jhlpay-flex__button button {
+      margin-top: 20px; } }
