@@ -148,7 +148,7 @@ a {
 
 .advantaged {
   background-color: #000000;
-  min-height: 800px;
+  min-height: 1350px;
   width: 100%;
   color: #ffffff; }
   .advantaged-title {
@@ -160,36 +160,34 @@ a {
     text-align: center;
     margin-top: 50px;
     margin-bottom: -0px; }
-  .advantaged-item {
-    margin-top: 40px;
-    margin-bottom: 80px; }
-    .advantaged-item .line {
-      position: absolute;
-      height: 3px;
-      width: 50px;
-      left: -10%;
-      bottom: 94%; }
-    .advantaged-item img {
+  .advantaged-item, .advantaged-item-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center; }
+    .advantaged-item-2, .advantaged-item-2-2 {
+      flex-direction: row-reverse; }
+    .advantaged-item img, .advantaged-item-2 img {
       display: inline;
-      width: 555px; }
-    .advantaged-item__textright, .advantaged-item__textleft {
+      max-width: 555px;
+      width: 98%; }
+    .advantaged-item__text, .advantaged-item-2__text {
       margin-top: 80px; }
-      .advantaged-item__textright p, .advantaged-item__textleft p {
+      .advantaged-item__text p, .advantaged-item-2__text p {
         font-size: 15px;
         font-family: "Playfair Display Regular";
         color: #ffffff;
         line-height: 1.4; }
-      .advantaged-item__textright h2, .advantaged-item__textleft h2 {
+      .advantaged-item__text h2, .advantaged-item-2__text h2 {
         font-family: "Playfair Display Bold";
         text-transform: uppercase;
         letter-spacing: 2px;
         margin-bottom: 30px; }
-    .advantaged-item__textright {
-      text-align: left; }
-    .advantaged-item__textleft {
-      text-align: right; }
 
 .jhl {
+  display: none;
   height: 420px;
   background-size: cover;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/jhl1969.jpg");
@@ -246,32 +244,63 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 50px; }
+    margin-top: 50px;
+    font-family: "Playfair Display Bold";
+    color: #010101; }
     .jhlpay-flex img {
+      max-width: 400px;
+      width: 100%;
       margin-bottom: 20px; }
     .jhlpay-flex h2 {
       font-size: 32px;
-      font-family: "Playfair Display Bold";
-      color: #010101;
       text-transform: uppercase; }
     .jhlpay-flex p {
-      font-family: "Playfair Display Regular";
-      color: #010101;
       line-height: 1.5;
       letter-spacing: 1.2px; }
+    .jhlpay-flex h3 {
+      text-align: left;
+      font-family: "Playfair Display Regular";
+      margin: 20px 0 40px 17px; }
+    .jhlpay-flex span {
+      font-weight: 100; }
     .jhlpay-flex__button {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       margin-bottom: 50px; }
     .jhlpay-flex button {
+      text-align: center;
       width: 230px;
       height: 50px;
       border: 2px solid #a5a5a3; }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 769px) {
+  .t1969 {
+    font-size: 28px; }
+  .information-title {
+    font-size: 18px; }
   .jhlpay-flex__button {
-    flex-direction: column;
-    padding-left: 120px; }
+    flex-direction: column; }
     .jhlpay-flex__button button {
-      margin-top: 20px; } }
+      margin: 20px auto 0px auto; }
+  .advantaged {
+    text-align: center; }
+  -item {
+    margin: 10px 0px; }
+  .advantaged-title {
+    font-size: 24px;
+    line-height: 30px; }
+  .advantaged-item__text {
+    margin-top: 5px; }
+    .advantaged-item__text h2 {
+      font-size: 20px;
+      margin-bottom: 10px; }
+  .jhlpay-title h2 {
+    font-size: 28px; }
+  .jhlpay-flex h2 {
+    font-size: 28px; }
+  .jhlpay-flex p {
+    margin-bottom: 20px; }
+  .jhlpay-flex h3 {
+    text-align: center;
+    margin: 15px 0; } }
