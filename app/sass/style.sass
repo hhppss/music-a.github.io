@@ -1,20 +1,17 @@
 @import "_fonts.sass"
 
-$color-item:      				#bea67c
-$color-text:      				#010101
+$color-item:      				#f9ad4a
 $color-white:     				#ffffff
-$color-black:							#000000
-$color-text__light:				#a5a5a3
-$color-block-jhl: 					#3d3d3d
+$color-black:							#222222
+$color-general-bg-light: #f8f8f8
+$color-text__light:				#8d8d8d
 
-=PlayDI()
-	font-family: "Playfair Display Italic" 
-=PlayDB()
-	font-family: "Playfair Display Bold"
-=PlayDBI()
-	font-family: "Playfair Display Bold Italic"
-=PlayDR()
-	font-family: "Playfair Display Regular"
+=MontSB()
+	font-family: "Montserrat SemiBold" 
+=MontB()
+	font-family: "Montserrat Bold"
+=MontR()
+	font-family: "Montserrat Regular"
 =PlayDBIL()
 	font-family: "Playfair Display Italic Black"
 =PlayDBL()
@@ -25,21 +22,19 @@ a
 	&:hover
 		color: white
 		text-decoration: none
-.t1969 
-	font-size: 35px
-	font-family: 'Times New Roman'
-	font-weight: 600
+
+.h2-light
+	color: $color-white
 
 =button-style()
-	+PlayDR
+	+MontR
 	letter-spacing: 1px
-	font-size: 15px 
+	font-size: 16px 
 	width: 200px
-	height: 50px
-	background-color: transparent
-	color: $color-white
-	border: 1px solid $color-white
-	border-radius: 5px
+	height: 45px
+	background-color: $color-item
+	color: $color-black
+	border: none
 	&:active
 		transform: translateY(3px)
 
@@ -49,24 +44,73 @@ a
 	height: 2px
 	background-color: $color-item
 
+#menu__toggle 
+ opacity: 0
+#menu__toggle:checked ~ .menu__btn > span 
+ transform: rotate(45deg)
+#menu__toggle:checked ~ .menu__btn > span::before 
+ top: 0
+ transform: rotate(0)
+#menu__toggle:checked ~ .menu__btn > span::after 
+ top: 0
+ transform: rotate(90deg)
+#menu__toggle:checked ~ .header-navbar 
+ visibility: visible
+ right: 0
+.menu__btn 
+	display: flex
+	align-items: center
+	position: fixed
+	top: 20px
+	right: 20px
+
+	width: 26px
+	height: 26px
+
+	cursor: pointer
+	z-index: 100
+
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after 
+	display: block
+	position: absolute
+
+	width: 100%
+	height: 2px
+
+	background-color: $color-item
+
+	transition-duration: .25s
+
+.menu__btn > span::before 
+	content: ''
+	top: -8px
+
+.menu__btn > span::after 
+	content: ''
+	top: 3px
+
+	transform: translateY(5px)	
 ////I			Голова сайта
 ////I		 Родитель .header
 ////I		
 
 .header 
-	background: url('../img/header-bg.jpg') 50% 50% no-repeat
+	background: url('../img/header-bg.jpg'), $color-black 50% 50% no-repeat
 	background-size: cover
 	width: 100%
-	height: 650px
+	height: 100vh
 	&-logo
-		text-align: center
+		margin-top: 20px
 		a, h1
-			+PlayDR
+			+MontR
 			margin: 10px 0px -1px 0px
-			font-size: 28px
+			font-size: 16px
 			line-height: 1.2
 			letter-spacing: 3px
-			color: $color-item
+			color: $color-text__light
 			-webkit-transition: 0.5s
     	transition: 0.5s
 			&:hover 
@@ -77,17 +121,36 @@ a
 			margin: 0 auto
 			width: 150px
 			height: 3px
+		
+		
 	&-navbar
-		display: flex
-		flex-wrap: wrap
-		justify-content: space-between
-		padding-top: 20px
+		display: block
+  position: fixed
+  visibility: hidden
+  top: 0
+  right: -100%
+  width: 300px
+  height: 100%
+		z-index: 20
+  margin: 0
+  padding: 80px 0
+  list-style: none
+  background-color: $color-black
+  transition-duration: .25s
 		li, a
-			font-size: 14px
-			list-style: none
+			display: block
+			padding: 12px 24px
+
 			color: $color-text__light
-			-webkit-transition: 0.3s
-			transition: 0.3s
+
+			font-family: 'Roboto', sans-serif
+			font-size: 20px
+			font-weight: 600
+
+			text-decoration: none
+
+			transition-duration: .25s
+			+MontR
 			&:hover
 				color: $color-white
 				-webkit-transition: 0.3s
@@ -97,12 +160,12 @@ a
 			padding: 1px 10px
 			border-radius: 10px
 			margin-top: -2px
-	&-title
-		margin-top: 100px 
+	&-title 
+		margin-top: 160px
 		line-height: 70px
 		p
-			+PlayDB
-			color: $color-item
+			+MontB
+			color: $color-white
 			font-size: 58px
 			letter-spacing: 7px
 	  span 
@@ -121,10 +184,11 @@ a
 ////I		
 
 .information
+	background-color: $color-general-bg-light
 	&-title
 		margin: 50px 0px 0px 0px
   font-size: 29px
-  +PlayDB
+  +MontB
   text-transform: uppercase
 		letter-spacing: 1.2px
 	&-text
@@ -132,8 +196,8 @@ a
 		text-align: justify
   font-size: 20px
 		margin-bottom: 50px
-  +PlayDB
-		color: $color-text
+  +MontB
+		color: $color-text__light
   line-height: 1.5
 		letter-spacing: 1.2px
 	.line
@@ -151,7 +215,7 @@ a
 	color: $color-white
 	&-title
   font-size: 32px
-  +PlayDB
+  +MontB
   color: $color-white
   text-transform: uppercase
   line-height: 2.47
@@ -175,12 +239,12 @@ a
 		&__text
 			margin-top: 80px
 			p
-				font-size: 15px
-				+PlayDR
+				font-size: 16px
+				+MontR
 				color: $color-white
 				line-height: 1.4
 			h2
-				+PlayDB
+				+MontB
 				text-transform: uppercase
   		letter-spacing: 2px
 				margin-bottom: 30px
@@ -189,8 +253,6 @@ a
 ////I		 Родитель .jhl
 ////I		
 .jhl
-	////////R
-	
 	display: none
 	height: 420px
 	background-size: cover
@@ -207,7 +269,7 @@ a
 			text-align: center
 			padding-top: 10px
 			font-size: 34px
-			+PlayDB
+			+MontB
 			color: $color-text__light
 			text-transform: uppercase
 		&__border
@@ -220,7 +282,7 @@ a
 			margin-left: -20px
 		&__items	
 			font-size: 20px
-			+PlayDB
+			+MontB
 			color: $color-text__light
 			line-height: 1.6
 			list-style: none
@@ -230,7 +292,7 @@ a
 		background: linear-gradient(rgba(51, 51, 51, 0.85), rgba(51, 51, 51, 0.85))
 		border: 2px solid $color-text__light
 		color: $color-text__light
-		+PlayDB
+		+MontB
 		font-size: 18px
 		margin-top: 20px
 
@@ -244,8 +306,8 @@ a
 	&-title
 		h2
 			font-size: 32px
-			+PlayDB
-			color: $color-text
+			+MontB
+			color: $color-text__light
 			text-transform: uppercase
 			line-height: 2.47
 			margin: 30px 0 30px 0
@@ -255,8 +317,8 @@ a
 		flex-wrap: wrap
 		justify-content: center
 		margin-top: 50px
-		+PlayDB
-		color: $color-text
+		+MontB
+		color: $color-text__light
 		img
 			max-width: 400px
 			width: 100%
@@ -269,10 +331,10 @@ a
 			letter-spacing: 1.2px
 		h3
 			text-align: left
-			+PlayDR()
+			+MontR()
 			margin: 20px 0 40px 17px
 		span
-			font-weight: 100
+			font-weight: 600
 		&__button
 			display: flex
 			justify-content: space-around
@@ -321,6 +383,8 @@ a
 		font-size: 28px
 	.information-title
 		font-size: 18px
+	.information-text p
+		font-size: 16px
 	.jhlpay-flex__button
 		flex-direction: column
 		button
