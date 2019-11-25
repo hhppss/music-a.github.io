@@ -17,10 +17,11 @@ a
 	color: white
 	&:hover
 		color: white
-		text-decoration: none
+		text-decoration: none 
 
-.h2-light
-	color: $color-white
+*
+	outline: none !important
+
 
 =button-style()
 	+MontR
@@ -31,15 +32,19 @@ a
 	background-color: $color-item
 	color: $color-black
 	border: none
+	-webkit-transform: .5s
+	transition-duration: .5s
+	outline: 0 !important
 	&:active
 		transform: translateY(3px)
+	&:focus
+		outline: none
 
 .line 
 	content: ' '
 	width: 100px
 	height: 2px
 	background-color: $color-item
-
 #menu__toggle 
  opacity: 0
 #menu__toggle:checked ~ .menu__btn > span 
@@ -65,8 +70,6 @@ a
 
 	cursor: pointer
 	z-index: 100
-
-
 .menu__btn > span,
 .menu__btn > span::before,
 .menu__btn > span::after 
@@ -97,7 +100,7 @@ a
 	background: url('../img/header-bg.jpg'), $color-black 50% 50% no-repeat
 	background-size: cover
 	width: 100%
-	height: 100vh
+	height: 700px
 	&-logo
 		margin-top: 20px
 		a, h1
@@ -117,8 +120,6 @@ a
 			margin: 0 auto
 			width: 150px
 			height: 3px
-		
-		
 	&-navbar
 		display: block
   position: fixed
@@ -158,19 +159,21 @@ a
 			margin-top: -2px
 	&-title 
 		margin-top: 160px
-		line-height: 70px
+		line-height: 82px
 		p
-			+MontB
+			+MontR
 			color: $color-white
-			font-size: 58px
-			letter-spacing: 7px
-	  span 
-	  	text-transform: uppercase
-	  	letter-spacing: 2px
+			font-size: 72px
+			letter-spacing: 2px
+			
 	&-btn
 		margin-top: 60px
 		button
 			+button-style()
+			&:hover
+				background-color: $color-white
+				-webkit-transform: .5s
+				transition-duration: .5s
 		img
 			margin-left: 10px
 			width: 15%
@@ -185,14 +188,13 @@ a
 		margin: 50px 0px 0px 0px
   font-size: 29px
   +MontB
-  text-transform: uppercase
-		letter-spacing: 1.2px
+		letter-spacing: 1px
 	&-text
 		margin-top: 50px
 		text-align: justify
-  font-size: 20px
+  font-size: 16px
 		margin-bottom: 50px
-  +MontB
+  +MontR
 		color: $color-text__light
   line-height: 1.5
 		letter-spacing: 1.2px
@@ -206,42 +208,37 @@ a
 
 .advantaged 
 	background-color: $color-black
-	min-height: 1350px
+	min-height: 1000px
 	width: 100%
 	color: $color-white
 	&-title
   font-size: 32px
   +MontB
   color: $color-white
-  text-transform: uppercase
-  line-height: 2.47
 		text-align: center
-		margin-top: 50px
-		margin-bottom: -0px
+		margin: 50px 0px 10px 0px
 	&-item, &-item-2
 		display: flex
 		flex-direction: row
 		flex-wrap: wrap
-		margin-top: 20px
-		margin-bottom: 20px
-		text-align: center
+		margin: 25px 0px
+		text-align: left
 		&-2
 			flex-direction: row-reverse
+			text-align: right
 		img
 			display: inline
 			max-width: 555px
 			width: 98%
 			//padding-left: 5px	
 		&__text
-			margin-top: 80px
 			p
 				font-size: 16px
 				+MontR
 				color: $color-white
-				line-height: 1.4
+				letter-spacing: 1.2px
 			h2
 				+MontB
-				text-transform: uppercase
   		letter-spacing: 2px
 				margin-bottom: 30px
 
@@ -249,48 +246,31 @@ a
 ////I		 Родитель .jhl
 ////I		
 .jhl
-	display: none
-	height: 420px
+	height: 450px
+	background-attachment: fixed
+	background-position: center
+	background-repeat: no-repeat
 	background-size: cover
-	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/jhl1969.jpg')
-	background-position: 0 50%
-	&-info
-		display: block
-		margin: 0 auto
-		margin-top: 40px
-		width: 800px
-		height: 270px
-		background: linear-gradient(rgba(51, 51, 51, 0.85), rgba(51, 51, 51, 0.85))
-		h2
-			text-align: center
-			padding-top: 10px
-			font-size: 34px
-			+MontB
-			color: $color-text__light
-			text-transform: uppercase
-		&__border
-			width: 750px
-			margin-left: 25px
-			height: 185px
-			border: 2px solid $color-text__light
-		&__item
-			padding-top: 8px
-			margin-left: -20px
-		&__items	
-			font-size: 20px
-			+MontB
-			color: $color-text__light
-			line-height: 1.6
-			list-style: none
-	&-button button
-		width: 200px
-		height: 50px
-		background: linear-gradient(rgba(51, 51, 51, 0.85), rgba(51, 51, 51, 0.85))
-		border: 2px solid $color-text__light
-		color: $color-text__light
-		+MontB
-		font-size: 18px
-		margin-top: 20px
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/jhl1969.jpg')
+	&-block
+		background-color: rgba(34, 34, 34, 0.7);
+		width: 100%
+		max-width: 500px
+		height: 350px
+		margin: 50px auto 0px auto
+
+	&-title
+		text-align: center
+		padding-top: 20px
+		+MontB()
+		color: $color-white
+	&-item
+		padding: 30px
+		+MontR()
+		color: $color-white
+		letter-spacing: 1.2px
+		font-size: 16px
+
 
 
 ////I			Блок покупки усилителя JHL 1969
@@ -303,17 +283,16 @@ a
 		h2
 			font-size: 32px
 			+MontB
-			color: $color-text__light
-			text-transform: uppercase
+			color: $color-black
 			line-height: 2.47
-			margin: 30px 0 30px 0
+			margin-top: 30px 
 	&-flex
 		display: flex
 		flex-direction: row
 		flex-wrap: wrap
 		justify-content: center
 		margin-top: 50px
-		+MontB
+		+MontR
 		color: $color-text__light
 		img
 			max-width: 400px
@@ -321,14 +300,13 @@ a
 			margin-bottom: 20px
 		h2
 			font-size: 32px
-			text-transform: uppercase
 		p
 			line-height: 1.5
-			letter-spacing: 1.2px
+			letter-spacing: 1px
 		h3
 			text-align: left
-			+MontR()
-			margin: 20px 0 40px 17px
+			+MontR
+			margin: 20px 0 40px 0px
 		span
 			font-weight: 600
 		&__button
@@ -336,11 +314,17 @@ a
 			justify-content: space-around
 			flex-wrap: wrap
 			margin-bottom: 50px
+			outline: none !important
 		button
 			text-align: center
 			width: 230px
 			height: 50px
 			border: 2px solid $color-text__light
+			
+.acoustics
+	background-color: $color-black
+	min-height: 1000px
+	width: 100%
 			
 
 
@@ -372,24 +356,45 @@ a
 
 
 
+@media only screen and (min-width: 1025px)
+	.advantaged-item__text
+		margin-top: 80px
 
+@media only screen and (max-width: 1023px)
+	.advantaged-item__text
+		p
+			letter-spacing: 0.8px
+	.header-title p
+		font-size: 52px
 
-@media only screen and (max-width: 769px) 
-	.t1969
+@media only screen and (max-width: 767px)
+	.advantaged-item__text
+		text-align: left
+
+@media only screen and (max-width: 426px)
+	.header
+		max-height: 450px
+	.header-title p
 		font-size: 28px
+	.header-title 
+		line-height: 35px
+		margin-top: 45px
+	.header-btn button
+		margin: 0 auto
+		display: block
+		font-size: 14px
 	.information-title
-		font-size: 18px
-	.information-text p
+		font-size: 24px
+	.information-text
+		margin-top: 10px
+		text-align: left
 		font-size: 16px
-	.jhlpay-flex__button
-		flex-direction: column
-		button
-			margin: 20px auto 0px auto
 	.advantaged
-		text-align: center
-	&-item
-		margin: 10px 0px
+		padding-bottom: 15px
+	.advantaged-item
+			margin: 20px 0px
 	.advantaged-title
+		text-align: left
 		font-size: 24px
 		line-height: 30px
 	.advantaged-item__text
@@ -397,9 +402,14 @@ a
 		h2
 			font-size: 20px
 			margin-bottom: 10px
+	.jhlpay-flex__button
+		flex-direction: column
+		button
+			margin: 20px auto 0px auto
 	.jhlpay-title
 		h2
 			font-size: 28px
+			margin-bottom: 0
 	.jhlpay-flex
 		h2
 			font-size: 28px
